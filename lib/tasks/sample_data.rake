@@ -31,7 +31,7 @@ def make_procedures
   puts "-----------------"
 
   @p11 = Procedure.create!(name: "Definir un plan estrategico de TI", code: "PO1", domain: @d1)
-  @p12 = Procedure.create!(name: "Definir la arquitectura de la informacion", code: "PO2", domain: @d1)
+  @p12 = Procedure.create!(name: "Definir la arquitectura de la información", code: "PO2", domain: @d1)
   @p13 = Procedure.create!(name: "Determinar la direccion tecnologica", code: "PO3", domain: @d1)
   @p14 = Procedure.create!(name: "Definir la Organización y Relaciones de TI", code: "PO4", domain: @d1)
 
