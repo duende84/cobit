@@ -1,0 +1,34 @@
+<%= form_for(@procedure) do |f| %>
+  <% if @procedure.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@procedure.errors.count, "error") %> prohibited this procedure from being saved:</h2>
+
+      <ul>
+      <% @procedure.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :code,"Codigo",:class => "label_form" %>
+    <%= f.text_field :code,:class => "text_field_form", :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :name,"Nombre",:class => "label_form" %>
+    <%= f.text_field :name,:class => "text_field_form", :required => true %>
+  </div>
+  <div class="field">
+    <%= f.label :description,"Descripcion",:class => "label_form" %>
+    <%= f.text_area :description,:class => "text_field_form", :size => "50x5" %>
+  </div>
+  <div class="field">
+    <%= f.label :domain_id, "Dominio", :class => "label_form" %>
+    <%= f.collection_select :domain_id, Domain.all, :id, :name, { :prompt => 'Seleccione un dominio' }, :class => "select_form", :required => true%>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar", class: "btn btn-primary btn_form" %>
+  </div>
+  <hr>
+<% end %>

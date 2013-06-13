@@ -1,0 +1,15 @@
+<div id="reg_form" class="bg_form">
+  <h1>Listado de Dominios</h1>
+  <% @domains.each do |domain| %>
+    <p><b>Codigo: </b><%= domain.code %></p>
+    <p><b>Nombre: </b><%= domain.name %></p>
+    <p><b>Descripcion: </b><%= domain.description %></p>
+    <p>
+      <%= link_to 'Mostrar', domain %> -
+      <%= link_to 'Editar', edit_domain_path(domain) %> -
+      <%= link_to 'Eliminar', domain, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    </p>
+  <hr>
+  <% end %>
+  <%= link_to 'Nuevo Dominio', new_domain_path %>
+</div>

@@ -1,0 +1,27 @@
+<div id="reg_form" class="bg_form">
+	<h1>Actividad <%= @activity.id %></h1>
+	<p>
+	  <b>Codigo:</b>
+	  <%= @activity.code %>
+	</p>
+
+	<p>
+	  <b>Nombre:</b>
+	  <%= @activity.name %>
+	</p>
+
+	<p>
+	  <b>Descripcion:</b>
+	  <%= @activity.description %>
+	</p>
+
+	<p>
+	  <b>Proceso:</b>
+	  <%= "#{@activity.procedure.code} - #{@activity.procedure.name}" %>
+	</p>
+
+  <hr>
+
+	<%= link_to 'Editar', edit_activity_path(@activity) %> |
+	<%= link_to 'Regresar', activities_path %>
+</div>

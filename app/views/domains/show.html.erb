@@ -1,0 +1,22 @@
+<div id="reg_form" class="bg_form">
+	<h1>Dominio <%= @domain.id %></h1>
+	<p>
+	  <b>Codigo:</b>
+	  <%= @domain.code %>
+	</p>
+
+	<p>
+	  <b>Nombre:</b>
+	  <%= @domain.name %>
+	</p>
+
+	<p>
+	  <b>Descripcion:</b>
+	  <%= @domain.description %>
+	</p>
+
+  <hr>
+
+	<%= link_to 'Editar', edit_domain_path(@domain) %> |
+	<%= link_to 'Regresar', domains_path %>
+</div>

@@ -1,0 +1,27 @@
+<div id="reg_form" class="bg_form">
+	<h1>Proceso <%= @procedure.id %></h1>
+	<p>
+	  <b>Codigo:</b>
+	  <%= @procedure.code %>
+	</p>
+
+	<p>
+	  <b>Nombre:</b>
+	  <%= @procedure.name %>
+	</p>
+
+	<p>
+	  <b>Descripcion:</b>
+	  <%= @procedure.description %>
+	</p>
+
+	<p>
+	  <b>Dominio:</b>
+	  <%= "#{@procedure.domain.code} - #{@procedure.domain.name}" %>
+	</p>
+
+  <hr>
+
+	<%= link_to 'Editar', edit_procedure_path(@procedure) %> |
+	<%= link_to 'Regresar', procedures_path %>
+</div>

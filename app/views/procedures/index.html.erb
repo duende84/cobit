@@ -1,0 +1,16 @@
+<div id="reg_form" class="bg_form">
+  <h1>Listado de procesos</h1>
+  <% @procedures.each do |procedure| %>
+    <p><b>Codigo: </b><%= procedure.code %></p>
+    <p><b>Nombre: </b><%= procedure.name %></p>
+    <p><b>Descripcion: </b><%= procedure.description %></p>
+    <p><b>Dominio: </b><%= "#{procedure.domain.code} - #{procedure.domain.name}" %></p>
+    <p>
+      <%= link_to 'Mostrar', procedure %> -
+      <%= link_to 'Editar', edit_procedure_path(procedure) %> -
+      <%= link_to 'Eliminar', procedure, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    </p>
+  <hr>
+  <% end %>
+  <%= link_to 'Nuevo Proceso', new_procedure_path %>
+</div>

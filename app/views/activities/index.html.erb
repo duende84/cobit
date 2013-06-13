@@ -1,0 +1,17 @@
+<div id="reg_form" class="bg_form">
+  <h1>Listado de actividades</h1>
+
+  <% @activities.each do |activity| %>
+    <p><b>Codigo: </b><%= activity.code %></p>
+    <p><b>Nombre: </b><%= activity.name %></p>
+    <p><b>Descripcion: </b><%= activity.description %></p>
+    <p><b>Proceso: </b><%= "#{activity.procedure.code} #{activity.procedure.name}" %></p>
+    <p>
+      <%= link_to 'Mostrar', activity %> -
+      <%= link_to 'Editar', edit_activity_path(activity) %> -
+      <%= link_to 'Eliminar', activity, method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    </p>
+    <hr>
+  <% end %>
+  <%= link_to 'Nueva Actividad', new_activity_path %>
+</div>
